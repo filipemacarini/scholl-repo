@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Cliente</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-md rounded-lg p-8 w-full max-w-lg">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+        Cadastro de <span class="text-blue-500">Cliente</span>
+      </h2>
+
+      <form id="formCliente" class="space-y-5">
+        <div>
+          <label for="nome" class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+        </div>
+
+        <div>
+          <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+        </div>
+
+        <div>
+          <label for="telefone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+        </div>
+
+        <div>
+          <label for="endereco" class="block text-gray-700 font-medium mb-2">Endereço</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 outline-none">
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg transition">
+          Cadastrar
+        </button>
+      </form>
+
+      <p class="text-center text-gray-600 mt-4">
+        Já tem uma conta? <a href="login.html" class="text-blue-500 hover:text-blue-700">Faça login</a>
+      </p>
+      
+      <div id="mensagemCliente" class="hidden text-center mt-6 text-green-600 font-medium">
+        Cadastro realizado com sucesso!
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("formCliente").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      const msg = document.getElementById("mensagemCliente");
+      msg.classList.remove("hidden");
+      msg.textContent = "Cadastro realizado com sucesso!";
+    });
+  </script>
+</body>
+</html>
